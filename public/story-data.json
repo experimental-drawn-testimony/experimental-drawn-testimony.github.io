@@ -350,7 +350,7 @@
     "title": "Liberation by the White Buses",
     "shorttitle": "White Buses",
     "subtitle": "Happier Times",
-    "text": "In April 1945, a few weeks before the end of the war, prisoners in Theresienstadt heard rumours that the White Buses were on their way from Sweden to liberate the Danish Jews. Sweden was a neutral country, to save Scandinavian prisoners from several camps, including Theresienstadt, they asked for safe passage through Germany. The White Buses arrived in Theresienstadt on April 15, it was a miracle that they had arrived safely.",
+    "text": "In April 1945, a few weeks before the end of the war, prisoners in Theresienstadt heard rumours that the White Buses were on their way from Sweden to liberate Scandinavian prisoners, including the Danish Jews. The Swedish Count Folke Bernadotte had negotiated for their release, cueing the start of the White Buses operation. The Danish prisoners – including Steen and his mother – were moved to the Jäger Barracks, where the White Buses arrived on April 15, 1945, to save them.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "15 April 1945",
     "audio": "buses_liberation.mp3",
@@ -367,7 +367,7 @@
       }
     ]
   },
-  "whitebus_x5F_group": {
+  "window_x5F_group": {
     "title": "Liberation by the White Buses",
     "subtitle": "The Roads through Germany",
     "text": "The White Buses rescued approximately 425 surviving Danish Jews. Before departure, some young Danish men married female prisoners from the ghetto so that they could also be liberated. Among those who left were four babies who had been born in the camp in secret. On the way back, the White Buses had to make several stops in Germany.\n\nquote(I remember looking outside while in the bus and drawing back the curtain, which I was not supposed to do. I saw some very young soldiers!)",
@@ -406,7 +406,7 @@
   "crowd_x5F_group": {
     "title": "Liberation by the White Buses",
     "subtitle": "The Ways through Denmark",
-    "text": "When the White Buses reached the Danish border on 17 April, Denmark was still under occupation. Nonetheless, the rescued Jews were greeted with flowers, candy, snacks, and sandwiches. Continuing through Denmark, the former prisoners took the ferry from the Copenhagen port to Malmö, Sweden, where the liberated prisoners were quarantined for two weeks in either Tylösand or Strangnæs.",
+    "text": "When the White Buses reached the Danish border on 17 April. Denmark was still under occupation, but the rescued Jews were greeted with flowers, candy, snacks, and sandwiches. Continuing through Denmark, the former prisoners took the ferry from the Copenhagen port to Malmö, Sweden, where the liberated prisoners had to be quarantined for two weeks in either Tylösand or Strangnæs.",
     "location": "Denmark",
     "time": "17 April 1945",
     "data": [
