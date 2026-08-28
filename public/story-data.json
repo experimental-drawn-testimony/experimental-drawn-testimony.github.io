@@ -102,7 +102,8 @@
     "subtitle": "The Journey to Theresienstadt",
     "text": "A group of around sixty Danish Jews, including Steen and his family, were assembled at the local school Vestre Skole before being transported to the nearby city of Kolding and later to Theresienstadt ghetto.",
     "location": "Odense, Denmark",
-    "time": "October 1943"
+    "time": "October 1943",
+    "audio": "arrest_vestreskole.mp3"
   },
   "transport": {
     "title": "Transport",
@@ -166,9 +167,10 @@
   "roof_x5F_group": {
     "title": "Station Bauschowitz-Theresienstadt",
     "subtitle": "Transport to Theresienstadt",
-    "text": "Theresienstadt had no railway station of its own. Instead, deportees were brought to the station Bauschowitz-Theresienstadt, known today as Bohušovice train station. From here, they were required to walk one and a half miles to reach the camp. Upon arrival, prisoners were ordered to surrender all valuables, including jewellery and money that they had been encouraged to bring. Steen's mother was permitted to retain her wedding ring solely because it could not be removed from her finger.\n\nAlthough the newly arrived prisoners were separated into groups based on gender and age, Steen was permitted to remain with his mother during his time at Theresienstadt.",
+    "text": "Theresienstadt had no railway station of its own. Instead, deportees were brought to the station Bauschowitz-Theresienstadt, known today as Bohušovice train station. From here, they were required to walk one and a half miles to reach the camp. \n\nAlthough the newly arrived prisoners were separated into groups based on gender and age, Steen was permitted to remain with his mother during his time at Theresienstadt.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "5 October 1943",
+    "audio": "transport_valuables.mp3",
     "data": [
       {
         "image": "/images/data/roof.jpg",
@@ -332,7 +334,7 @@
   "steenmetz_x5F_group": {
     "title": "Friendships in Theresienstadt",
     "subtitle": "Playing Soccer",
-    "text": "Besides lining up for food and doing voluntary work, Steen played soccer with some of the Czech children in Theresienstadt. To communicate with them, he learned Czech phonetically. Steen recalls that these were the only moments where he felt closest to being a nine-year-old.",
+    "text": "Besides lining up for food and doing voluntary work, Steen played soccer with some of the Czech children in Theresienstadt. Steen recalls that these were the only moments where he felt closest to being a nine-year-old.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "1943 - 1945"
   },
