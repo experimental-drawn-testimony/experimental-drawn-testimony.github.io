@@ -34,7 +34,7 @@ const paintings = [
   { key: "barracks", svgFile: "/images/5. barracks.svg" },
   { key: "infirmary", svgFile: "/images/5.5 infirmary.svg" },
   { key: "soccer", svgFile: "/images/7. Soccer scene.svg" },
-  // { key: "modelcamp", svgFile: "/images/Model Camp scene-1.svg" },
+  { key: "modelcamp", svgFile: "/images/Model Camp scene-1.svg" },
   { key: "whitebus", svgFile: "/images/10. white buses.svg" },
   { key: "after", svgFile: "/images/11. After Theresienstadt.svg" },
 ];
