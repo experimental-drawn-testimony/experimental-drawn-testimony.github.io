@@ -37,6 +37,7 @@ const paintings = [
   { key: "modelcamp", svgFile: "/images/Model Camp scene-1.svg" },
   { key: "whitebus", svgFile: "/images/10. white buses.svg" },
   { key: "after", svgFile: "/images/11. After Theresienstadt.svg" },
+  { key: "question_answer", svgFile: "/images/12. second career.svg" },
 ];
 
 function AnimatedWords({
