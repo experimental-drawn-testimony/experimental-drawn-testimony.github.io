@@ -551,5 +551,82 @@
         "lon": -87.747
       }
     }
+  },
+  "question_answer": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "forgiven_x5F_group": {
+    "title": "Have you forgiven the Nazis?",
+    "subtitle": "Asked after a presentation in a church",
+    "text": "I know that forgiveness is a good thing and I realize the environment in which I am answering the question, but I still cannot forgive Nazis for what they did. How could I? They were responsible for taking the lives of six million Jews, including that of my father, and millions of other lives as well.",
+    "location": null,
+    "time": null
+  },
+  "collaborators_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "jewish_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "religion_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "lesson_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "extermination_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "sharing_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "discrimination_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "attitude_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
+  },
+  "guilty_x5F_group": {
+    "title": "",
+    "subtitle": "",
+    "text": "",
+    "location": null,
+    "time": null
   }
 }
