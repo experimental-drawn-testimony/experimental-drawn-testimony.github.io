@@ -147,8 +147,8 @@
     ]
   },
   "cattlecar_x5F_group": {
-    "title": "The Cattle Car",
-    "subtitle": "Transport to Theresienstadt",
+    "title": "Transport",
+    "subtitle": "The Cattle Car",
     "text": "The conditions aboard the transport were poor. Although historians commonly employ the term 'boxcar', Steen and fellow survivors consistently use the term 'cattle car', because that is what it was. The absence of any sanitary facilities produced an overwhelming smell, which Steen remembers vividly. Steen recounts the frightened faces around him, no one had any knowledge of what would happen to them.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "2 October 1943",
@@ -165,8 +165,8 @@
     ]
   },
   "roof_x5F_group": {
-    "title": "Station Bauschowitz-Theresienstadt",
-    "subtitle": "Transport to Theresienstadt",
+    "title": "Transport",
+    "subtitle": "Station Bauschowitz-Theresienstadt",
     "text": "Theresienstadt had no railway station of its own. Instead, deportees were brought to the station Bauschowitz-Theresienstadt, known today as Bohušovice train station. From here, they were required to walk one and a half miles to reach the camp. \n\nAlthough the newly arrived prisoners were separated into groups based on gender and age, Steen was permitted to remain with his mother during his time at Theresienstadt.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "5 October 1943",
@@ -234,6 +234,28 @@
     "title": "Forced Labour",
     "subtitle": "Delivering Messages",
     "text": "Steen did voluntary work in the camp, carrying messages and documents between offices. While delivering documents, Steen used to pass the kitchens. One day, he spotted a sack of raw potatoes. Making sure no one was watching, he took two potatoes and slipped them into his pocket. Upon return to the barracks, he shared them with his mother.",
+    "location": "Theresienstadt, Czechoslovakia",
+    "time": "1935 - 1943"
+  },
+  "food": {
+    "title": "Living Conditions in Theresienstadt",
+    "shorttitle": "Living Conditions",
+    "subtitle": "Queueing for Food",
+    "text": "During his time in Theresienstadt Ghetto, Steen and the other prisoners had to stand in long lines to receive their meal. They ate potato soup almost every day, which was little more than boiled water and potato peels. At breakfast, prisoners received a substitute for coffee and a single loaf of bread to share among the family for the entire week. Sometimes, they received a special dish of dumplings.",
+    "location": "Theresienstadt, Czechoslovakia",
+    "time": "1935 - 1943"
+  },
+  "exchangingfood_x5F_group": {
+    "title": "Living Conditions in Theresienstadt",
+    "subtitle": "Exchanging Food",
+    "text": "When Steen outgrew his shoes, there was no way to replace them. Food had become as valuable as gold, and prisoners used it to trade for things they needed. Steen’s mother exchanged food for a pair of second-hand shoes with a fellow prisoner. Around 35,000 people in the camp died as a result of malnutrition, a stark reminder of the scarcity of basic necessities.",
+    "location": "Theresienstadt, Czechoslovakia",
+    "time": "1935 - 1943"
+  },
+  "carepackages_x5F_group": {
+    "title": "Living Conditions in Theresienstadt",
+    "subtitle": "Care Packages from the Red Cross",
+    "text": "In April 1944, about six months after their arrival, Danish prisoners began receiving packages from Denmark and Sweden containing food, vitamins, and clothing. These parcels were crucial to their survival. However, guards frequently took food from the packages before they reached the prisoners. One parcel addressed to Steen’s mother arrived unusually heavy. When she opened it, the food had been removed and replaced with stones.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "1935 - 1943"
   },
@@ -314,8 +336,8 @@
     ]
   },
   "ball_x5F_group": {
-    "title": "The Soccer Field",
-    "subtitle": "Playing Soccer",
+    "title": "Friendship",
+    "subtitle": "The Soccer Field",
     "text": "Steen played with a group of Czech children. In order to communicate with them, he learned Czech phonetically. The conditions in which Steen and his Czech friends played were makeshift. There was no soccer field, no designated goal post, and no proper ball; the games took place on a gravel field, and Steen's mother made a ball from old rags – one that did not last long.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "1943 - 1945",
@@ -332,15 +354,15 @@
     ]
   },
   "steenmetz_x5F_group": {
-    "title": "Friendships in Theresienstadt",
-    "subtitle": "Playing Soccer",
+    "title": "Friendship",
+    "subtitle": "Moments of Childhood",
     "text": "Besides lining up for food and doing voluntary work, Steen played soccer with some of the Czech children in Theresienstadt. Steen recalls that these were the only moments where he felt closest to being a nine-year-old.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "1943 - 1945"
   },
   "friends_x5F_group": {
-    "title": "Friendships in Theresienstadt",
-    "subtitle": "Playing Soccer",
+    "title": "Friendship",
+    "subtitle": "A Sudden Loss",
     "text": "On one occasion, Steen arrived at the field to play soccer to find that his Czech friends had not come. His mother, who knew what had happened, comforted him and chose to protect him from the truth: the children had been transported to extermination camps.",
     "location": "Theresienstadt, Czechoslovakia",
     "time": "1943 - 1945",
