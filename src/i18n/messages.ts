@@ -7,6 +7,14 @@ export interface TutorialMessage {
 }
 
 interface UiMessages {
+  startScreen: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    invitation: string;
+    begin: string;
+    language: string;
+  };
   navbar: {
     primaryNavigation: string;
     returnToBeginning: string;
@@ -29,6 +37,8 @@ interface UiMessages {
     missingTime: string;
     missingSvgPath: string;
     interactionPrompt: string;
+    seeEvidenceResources: string;
+    seeStory: string;
   };
   tutorial: {
     steps: TutorialMessage[];
@@ -57,6 +67,15 @@ interface UiMessages {
 
 export const messages: Record<Language, UiMessages> = {
   en: {
+    startScreen: {
+      eyebrow: "An Interactive Visual Testimony",
+      title: "A Danish Boy\nin Theresienstadt",
+      subtitle: "A Drawn Testimony",
+      invitation:
+        "Follow Steen Metz's memories through drawings, testimony, and archival evidence.",
+      begin: "Touch to begin",
+      language: "Choose language",
+    },
     navbar: {
       primaryNavigation: "Primary navigation",
       returnToBeginning: "Return to the beginning",
@@ -79,7 +98,9 @@ export const messages: Record<Language, UiMessages> = {
       missingTime: "Please add time.",
       missingSvgPath: "No SVG path was provided.",
       interactionPrompt:
-        "Click on the interactive objects in the drawing to find out more.",
+        "Click on the interactive objects in the drawing for details.",
+      seeEvidenceResources: "See Evidence resources",
+      seeStory: "See Story",
     },
     tutorial: {
       steps: [
@@ -132,6 +153,15 @@ export const messages: Record<Language, UiMessages> = {
     },
   },
   da: {
+    startScreen: {
+      eyebrow: "Et Interaktivt Visuelt Vidnesbyrd",
+      title: "En dansk dreng\ni Theresienstadt",
+      subtitle: "Et tegnet vidnesbyrd",
+      invitation:
+        "Følg Steen Metz' erindringer gennem tegninger, vidnesbyrd og historisk kildemateriale.",
+      begin: "Tryk for at begynde",
+      language: "Vælg sprog",
+    },
     navbar: {
       primaryNavigation: "Primær navigation",
       returnToBeginning: "Gå tilbage til begyndelsen",
@@ -155,6 +185,8 @@ export const messages: Record<Language, UiMessages> = {
       missingSvgPath: "Der er ikke angivet en sti til SVG-filen.",
       interactionPrompt:
         "Klik på de interaktive objekter i tegningen for at få mere at vide.",
+      seeEvidenceResources: "Se kildemateriale",
+      seeStory: "Se fortællingen",
     },
     tutorial: {
       steps: [

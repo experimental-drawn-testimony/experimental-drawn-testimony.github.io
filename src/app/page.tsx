@@ -10,7 +10,7 @@ import Painting from "./2d-painting/painting";
 import { PaintingTimeline } from "./2d-painting/PaintingTimeline";
 import { getSteenPortrait, PaintingAudio } from "./2d-painting/PaintingAudio";
 import { PaintingMap } from "./map/PaintingMap";
-import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon, CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 import { TutorialOverlay } from "./TutorialOverlay";
 
 const reenie_beanie = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
@@ -38,7 +38,7 @@ const paintings = [
   { key: "modelcamp", svgFile: "/images/Model Camp scene-1.svg" },
   { key: "whitebus", svgFile: "/images/10. white buses.svg" },
   { key: "after", svgFile: "/images/11. After Theresienstadt.svg" },
-  { key: "question_answer", svgFile: "/images/12. second career.svg" },
+  { key: "question_answer", svgFile: "/images/12. second career.svg", noTimelineThumbnails: true },
 ];
 
 function AnimatedWords({
@@ -151,6 +151,54 @@ export interface StoryEntry {
   shorttitle?: string;
 }
 
+function StartScreen({
+  language,
+  onLanguageChange,
+  onBegin,
+}: {
+  language: Language;
+  onLanguageChange: (language: Language) => void;
+  onBegin: () => void;
+}) {
+  const ui = messages[language].startScreen;
+
+  return (
+    <section className="start-screen bg-white" aria-labelledby="start-screen-title">
+      <div className="start-screen-art cursor-pointer" aria-hidden="true" onClick={onBegin}>
+        <img src="/images/Title page-1.svg" alt="" />
+      </div>
+
+      <div className="start-screen-language" aria-label={ui.language} role="group">
+        {(["en", "da"] as const).map((locale) => (
+          <button
+            key={locale}
+            type="button"
+            aria-pressed={language === locale}
+            onClick={() => onLanguageChange(locale)}
+          >
+            {locale === "en" ? "English" : "Dansk"}
+          </button>
+        ))}
+      </div>
+
+      <div className="start-screen-content cursor-pointer" onClick={onBegin}>
+        <p className="start-screen-eyebrow">{ui.eyebrow}</p>
+        <h1 id="start-screen-title" className={noto_serif.className}>
+          {ui.title.split("\n").map((line) => (
+            <span key={line}>{line}</span>
+          ))}
+        </h1>
+        <p className={`start-screen-subtitle ${reenie_beanie.className}`}>
+          {ui.subtitle}
+        </p>
+        <p className="start-screen-invitation">{ui.invitation}</p>
+
+        <p className="mt-8 text-2xl text-gray-600">{ui.begin}</p>
+      </div>
+    </section>
+  );
+}
+
 function MainMenu() {
   const mode = useSelector((state: State) => state.app.mode);
   const dispatch = useDispatch();
@@ -170,6 +218,7 @@ function MainMenu() {
   const [focusData, setFocusData] = useState<any>(null);
   const [discoveredStoryKeys, setDiscoveredStoryKeys] = useState<Array<string>>([]);
   const [tutorialOpen, setTutorialOpen] = useState(false);
+  const [startScreenOpen, setStartScreenOpen] = useState(true);
 
   useEffect(() => {
     Promise.all(
@@ -301,11 +350,6 @@ function MainMenu() {
               ? renderStoryText(story.text)
               : ui.story.missingText}
           </div>
-          {inactive !== true && !selectedGroup &&
-            <div className="text-base flex flex-row items-center gap-1 content-reveal">
-              <span>{ui.story.interactionPrompt}</span>
-              <div><CursorArrowRaysIcon className="size-7 animate-pulse" /></div>
-            </div>}
           <div className="text-base flex gap-1 flex-col story-media-reveal">
             {story.audio &&
               <PaintingAudio src={`/audio/${story.audio}`} />
@@ -326,9 +370,32 @@ function MainMenu() {
               </div>
             </div>
           }
+          {painting.inactive !== true && !selectedGroup &&
+            <div className="mt-7 w-full flex justify-center">
+              <div className="text-base flex flex-row items-center gap-1 content-reveal">
+                <div><CursorArrowRaysIcon className="size-7 animate-pulse" /></div>
+                <span className="italic text-gray-600">{ui.story.interactionPrompt}</span>
+              </div>
+            </div>}
         </>}
     </>
   }, [ui])
+
+  const viewToggle = (
+    <div className="flex justify-end mb-2" data-tutorial="data">
+      <button
+        type="button"
+        className="interface-pill-button story-view-button"
+        title={!dataView && story.data == null ? ui.navbar.dataUnavailable : undefined}
+        onClick={(event) => {
+          event.stopPropagation();
+          setDataView((currentView) => !currentView);
+        }}
+      >
+        {dataView ? ui.story.seeStory : ui.story.seeEvidenceResources}
+      </button>
+    </div>
+  );
 
   return (
     <div
@@ -338,26 +405,28 @@ function MainMenu() {
       }}
     >
       <Navbar
-        dataAvailable={story.data != null}
-        dataView={dataView}
         language={language}
         tutorialOpen={tutorialOpen}
         onLanguageChange={(nextLanguage) => dispatch(setLanguage(nextLanguage))}
-        onLogoClick={() => dispatch(setSelectedPainting(0))}
+        onLogoClick={() => {
+          dispatch(setSelectedPainting(0));
+          setStartScreenOpen(true);
+        }}
         onOpenTutorial={() => setTutorialOpen(true)}
-        onViewChange={setDataView}
       />
 
       <div className="relative grid size-full min-h-0 grid-rows-1 grid-cols-[70%_30%] items-center justify-center">
-        <div className="size-full" data-tutorial="painting">
+        <div className="size-full relative" data-tutorial="painting">
           {
-            <Painting
-              key={painting.key}
-              svgFile={painting.svgFile}
-              inactive={painting.inactive}
-              discoveredStoryKeys={discoveredStoryKeys}
-              missingSvgPath={ui.story.missingSvgPath}
-            />
+            <>
+              <Painting
+                key={painting.key}
+                svgFile={painting.svgFile}
+                inactive={painting.inactive}
+                discoveredStoryKeys={discoveredStoryKeys}
+                missingSvgPath={ui.story.missingSvgPath}
+              />
+            </>
           }
         </div>
 
@@ -365,11 +434,12 @@ function MainMenu() {
           <div className="size-full absolute top-0 left-0">
             {storyData != null && (
               <div className={`size-full opacity-80 text-gray-950 relative transition-all ${dataView ? 'bg-gray-300 border-l border-gray-400' : ''}`}>
-                <div className="absolute top-0 left-0 size-full overflow-hidden overflow-y-scroll flex items-center">
+                <div className="painting-story-scroll absolute top-0 left-0 size-full overflow-hidden overflow-y-scroll flex items-center">
                   <div
                     key={`${language}-${selectedStoryKey}-${dataView ? "data" : "story"}`}
                     className="w-full max-h-full flex gap-2 flex-col p-3 px-6 story-sequence"
                   >
+                    {story.data != null && viewToggle}
                     {renderContent(story, dataView, painting.inactive, selectedGroup)}
                   </div>
                 </div>
@@ -379,7 +449,7 @@ function MainMenu() {
         </div>
       </div>
 
-      <div className="size-full" data-tutorial="timeline">
+      <div className="painting-timeline-area size-full" data-tutorial="timeline">
         {storyData && (
           <PaintingTimeline
             paintings={paintings}
@@ -401,12 +471,41 @@ function MainMenu() {
         open={tutorialOpen}
         onClose={() => setTutorialOpen(false)}
       />
-      <div className="painting-paper-overlay absolute inset-0 pointer-events-none z-[1050]" />
+      {startScreenOpen && (
+        <StartScreen
+          language={language}
+          onLanguageChange={(nextLanguage) => dispatch(setLanguage(nextLanguage))}
+          onBegin={() => {
+            dispatch(setMode("explore"));
+            setStartScreenOpen(false);
+          }}
+        />
+      )}
+      <div className="painting-paper-overlay absolute inset-0 pointer-events-none z-[9999]" />
     </div>
   );
 }
 
 export default function Home() {
+  useEffect(() => {
+    const updateViewportHeight = () => {
+      const height = window.visualViewport?.height ?? window.innerHeight;
+      document.documentElement.style.setProperty(
+        "--app-viewport-height",
+        `${Math.round(height)}px`
+      );
+    };
+
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
+    window.visualViewport?.addEventListener("resize", updateViewportHeight);
+    return () => {
+      window.removeEventListener("resize", updateViewportHeight);
+      window.visualViewport?.removeEventListener("resize", updateViewportHeight);
+      document.documentElement.style.removeProperty("--app-viewport-height");
+    };
+  }, []);
+
   return (
     <Provider store={store}>
       <MainMenu />
