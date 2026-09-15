@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --highlight-rgb: rgb(230, 202, 173);
+  --highlight-dark: rgb(216, 154, 87);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --highlight-rgb: rgb(230, 202, 173);
+    --highlight-dark: rgb(216, 154, 87);
   }
 }
 
@@ -230,6 +234,7 @@ input:checked + .slider:before {
   font-size: clamp(0.8rem, 1.1vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.16em;
+  color: var(--highlight-dark);
 }
 
 .start-screen h1 {
@@ -337,7 +342,7 @@ input:checked + .slider:before {
 }
 
 .start-screen-language button[aria-pressed="true"] {
-  background: #202020;
+  background: var(--highlight-dark);
   color: white;
 }
 
@@ -370,7 +375,7 @@ input:checked + .slider:before {
 }
 
 .navbar-language button[aria-pressed="true"] {
-  background: #202020;
+  background: var(--highlight-dark);
   color: white;
 }
 
@@ -858,7 +863,7 @@ input:checked + .slider:before {
     fill: rgba(0, 0, 0, 0); /* White */
   }
   50% {
-    fill: rgba(185, 185, 185, 0.722); /* Transparent */
+    fill: rgba(230, 202, 173, 0.722); /* Transparent */
   }
   100% {
     fill: rgba(0, 0, 0, 0); /* White */

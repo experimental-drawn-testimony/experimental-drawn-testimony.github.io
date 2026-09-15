@@ -188,12 +188,12 @@ function StartScreen({
             <span key={line}>{line}</span>
           ))}
         </h1>
-        <p className={`start-screen-subtitle ${reenie_beanie.className}`}>
+        <p className={`text-[var(--highlight-dark)] start-screen-subtitle ${reenie_beanie.className}`}>
           {ui.subtitle}
         </p>
         <p className="start-screen-invitation">{ui.invitation}</p>
 
-        <p className="mt-8 text-2xl text-gray-600">{ui.begin}</p>
+        <p className="mt-8 text-2xl text-[var(--highlight-dark)]">{ui.begin}</p>
       </div>
     </section>
   );
