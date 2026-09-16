@@ -179,45 +179,41 @@ input:checked + .slider:before {
   overflow: hidden;
   color: #171717;
   isolation: isolate;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content auto;
 }
 
 .start-screen-art {
-  position: absolute;
-  overflow: hidden;
-  top: auto;
-  bottom: auto;
-  right: -25%;
   height: 100%;
+  width: 100%;
   z-index: -2;
+  padding: 10%;
+  overflow: visible;
 }
 
-/* .start-screen-art::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: linear-gradient(
-    90deg,
-    #e9e7e1 0%,
-    rgba(233, 231, 225, 0.93) 12%,
-    rgba(233, 231, 225, 0.18) 33%,
-    transparent 75%
-  );
-} */
-
 .start-screen-art img {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover;
   object-position: center;
-  filter: grayscale(1) contrast(1.04);
+  filter: grayscale(1) contrast(1.04); */
   animation: start-screen-art-arrive 1.4s ease-out both;
 }
 
 .start-screen-content {
   align-self: center;
-  width: min(48rem, 57vw);
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  padding: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  /* width: min(48rem, 57vw);
   margin-left: clamp(2rem, 7vw, 8rem);
-  padding: clamp(5rem, 10vh, 8rem) 0 3rem;
+  padding: clamp(5rem, 10vh, 8rem) 0 3rem; */
 }
 
 .start-screen-rule {
@@ -238,15 +234,16 @@ input:checked + .slider:before {
 }
 
 .start-screen h1 {
-  max-width: 14ch;
+  max-width: 18ch;
   font-size: clamp(3rem, 6.2vw, 6.9rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.045em;
 }
 
-.start-screen h1 span {
+.start-screen h1 div {
   display: block;
+  text-wrap: nowrap;
 }
 
 .start-screen-subtitle {
@@ -317,10 +314,15 @@ input:checked + .slider:before {
   width: 1.45rem;
 }
 
+.start-screen-language-wrapper {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+}
+
 .start-screen-language {
-  position: absolute;
-  top: clamp(1rem, 3vw, 2.5rem);
-  right: clamp(1rem, 3vw, 2.5rem);
   z-index: 2;
   display: flex;
   gap: 0.35rem;
@@ -492,6 +494,7 @@ input:checked + .slider:before {
     width: auto;
     margin: 0;
     padding: 8rem 1.4rem max(2rem, env(safe-area-inset-bottom));
+    background-color: #fff;
   }
 
   .start-screen h1 {

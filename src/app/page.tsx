@@ -163,29 +163,32 @@ function StartScreen({
   const ui = messages[language].startScreen;
 
   return (
-    <section className="start-screen bg-white" aria-labelledby="start-screen-title">
-      <div className="start-screen-art cursor-pointer" aria-hidden="true" onClick={onBegin}>
-        <img src="/images/Title page-1.svg" alt="" />
+    <div className="start-screen bg-white" aria-labelledby="start-screen-title">
+      <div className="start-screen-language-wrapper">
+
+        <div className="start-screen-language" aria-label={ui.language} role="group">
+          {(["en", "da"] as const).map((locale) => (
+            <button
+              key={locale}
+              type="button"
+              aria-pressed={language === locale}
+              onClick={() => onLanguageChange(locale)}
+            >
+              {locale === "en" ? "English" : "Dansk"}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="start-screen-language" aria-label={ui.language} role="group">
-        {(["en", "da"] as const).map((locale) => (
-          <button
-            key={locale}
-            type="button"
-            aria-pressed={language === locale}
-            onClick={() => onLanguageChange(locale)}
-          >
-            {locale === "en" ? "English" : "Dansk"}
-          </button>
-        ))}
+      <div className="start-screen-art cursor-pointer" aria-hidden="true" onClick={onBegin}>
+        <img src="/images/Title Steen.svg" alt="" />
       </div>
 
       <div className="start-screen-content cursor-pointer" onClick={onBegin}>
         <p className="start-screen-eyebrow">{ui.eyebrow}</p>
         <h1 id="start-screen-title" className={noto_serif.className}>
           {ui.title.split("\n").map((line) => (
-            <span key={line}>{line}</span>
+            <div key={line}>{line}</div>
           ))}
         </h1>
         <p className={`text-[var(--highlight-dark)] start-screen-subtitle ${reenie_beanie.className}`}>
@@ -193,9 +196,9 @@ function StartScreen({
         </p>
         <p className="start-screen-invitation">{ui.invitation}</p>
 
-        <p className="mt-8 text-2xl text-[var(--highlight-dark)]">{ui.begin}</p>
+        <p className="mt-8 text-2xl italic text-[var(--highlight-dark)]">{ui.begin}</p>
       </div>
-    </section>
+    </div>
   );
 }
 
