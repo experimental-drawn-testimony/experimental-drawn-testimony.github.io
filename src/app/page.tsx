@@ -12,6 +12,7 @@ import { getSteenPortrait, PaintingAudio } from "./2d-painting/PaintingAudio";
 import { PaintingMap } from "./map/PaintingMap";
 import { ArrowRightIcon, CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 import { TutorialOverlay } from "./TutorialOverlay";
+import type { LineString } from "geojson";
 
 const reenie_beanie = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
 const noto_serif = Noto_Serif({ weight: "400", subsets: ["latin"] });
@@ -130,6 +131,7 @@ export interface MapEntry {
   mapyear?: number;
   start: { lat: number, lon: number };
   end?: { lat: number, lon: number };
+  lineString?: LineString;
 }
 
 export interface StoryDataItem {
@@ -364,6 +366,7 @@ function MainMenu() {
                 <PaintingMap
                   start={story.map.start}
                   end={story.map.end}
+                  lineString={story.map.lineString}
                   mapyear={story.map.mapyear}
                   ariaLabel={ui.map.historicalTravelMap}
                 />
